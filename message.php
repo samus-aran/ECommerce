@@ -16,6 +16,7 @@ $inputCountry = $_POST['msgCountry'];
 $inputPostcode = $_POST['msgPostcode'];
 $inputPhone = $_POST['msgPhone'];
 $inputDOB = $_POST['msgDOB'];
+$inputPass = hash('ripemd160', $_POST['msgPass']);
 
 $inputFullName = $inputFirst.' '.$inputLast;
 
@@ -63,16 +64,11 @@ mysqli_select_db($connection, $db) or die ("Unable to select database!");
 
 // create the queries
 
-$query = "INSERT INTO Customer (CustomerFirstName, CustomerLastName, CustomerEmail, CustomerAddress1, CustomerAddress2, CustomerCity, CustomerCountry, CustomerPostcode, CustomerPhone, CustomerDOB) VALUES ('$inputFirst','$inputLast','$inputEmail','$inputAddress1','$inputAddress2','$inputCity','$inputCountry','$inputPostcode','$inputPhone','$inputDOB')";
+$query = "INSERT INTO Customer (CustomerFirstName, CustomerLastName, CustomerEmail, CustomerAddress1, CustomerAddress2, CustomerCity, CustomerCountry, CustomerPostcode, CustomerPhone, CustomerDOB, CustomerPass) VALUES ('$inputFirst','$inputLast','$inputEmail','$inputAddress1','$inputAddress2','$inputCity','$inputCountry','$inputPostcode','$inputPhone','$inputDOB','$inputPass')";
 
 // execute queries and insert into database
 
-mysqli_query($connection, $query) or die ("Error in query: $query.".mysqli_error());
-
-
-// free result set memory 
-
-//mysqli_free_result($result);
+mysqli_query($connection, $query) or die ("Error in query: $query.".mysqli_error($connection));
 
 // close connection
 

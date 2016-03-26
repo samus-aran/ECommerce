@@ -30,7 +30,27 @@ echo '£'.$price1.' added to £'.$price2.' totals to £'.$priceTotal.'.<br />';
 
 ?>
 
-<a href="form.html">Sign Up</a>
+<br /><a href="form.html">Sign Up</a><br />
+
+<br /><a href="index.html">Back to Index</a><br />
+
+<br />
+<?php
+
+// initialise a session_cache_expire
+
+session_start();
+
+// increment a session counter
+
+$_SESSION['counter']++;
+
+// print value
+
+echo "You have viewed this page " . $_SESSION['counter'] . " times.";
+
+?>
+<br />
 
 </body>
 
