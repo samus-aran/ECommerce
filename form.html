@@ -7,23 +7,41 @@ Please enter your registration detail. Fields marked with a * are required.
 
 <form action="message.php" method="post">
 
-First Name*: <br><input type="text" name="msgFirst" size="30"><br />
-Last Name*: <br><input type="text" name="msgLast" size="30"><br />
-Email Address*: <br><input type="text" name="msgEmail" size="30"><br />
-Password*: <br><input type="password" name="msgPass" size="30"><br />
-Street Address 1*: <br><input type="text" name="msgAddress1" size="30"><br />
+First Name*: <br><input type="text" name="msgFirst" required="required" size="30"><br />
+Last Name*: <br><input type="text" name="msgLast" required="required" size="30"><br />
+Email Address*: <br><input type="email" name="msgEmail" required="required" size="30"><br />
+Password*: <br><input type="password" name="msgPass" required="required" size="30"><br />
+Street Address 1*: <br><input type="text" name="msgAddress1" required="required" size="30"><br />
 Street Address 2: <br><input type="text" name="msgAddress2" size="30"><br />
-City/Town*: <br><input type="text" name="msgCity" size="30"><br />
-Country*: <br><input type="text" name="msgCountry" size="30"><br />
-Postcode*: <br><input type="text" name="msgPostcode" size="30"><br />
+City/Town*: <br><input type="text" name="msgCity" required="required" size="30"><br />
+Country*: <br><input type="text" name="msgCountry" required="required" size="30"><br />
+Postcode*: <br><input type="text" name="msgPostcode" required="required" size="30"><br />
 Phone No.: <br><input type="text" name="msgPhone" size="30"><br />
-Date of Birth (yyyy-mm-dd)*: <br><input type="text" name="msgDOB" size="30"><br />
+<fieldset>
+	<legend>Date of Birth (DD-MM-YYYY)*</legend>
+	Day: <input type="text" name="msgDay" required="required" size="5">
+	Month: <select name="msgMonth">
+		<option value="01">January</option>
+		<option value="02">February</option>
+		<option value="03">March</option>
+		<option value="04">April</option>
+		<option value="05">May</option>
+		<option value="06">June</option>
+		<option value="07">July</option>
+		<option value="08">August</option>
+		<option value="09">September</option>
+		<option value="10">October</option>
+		<option value="11">November</option>
+		<option value="12">December</option>
+	</select>
+	Year: <input type="text" name="msgYear" required="required" size="8">
+</fieldset>
 
 <br><input type="submit" value="Complete Registration">
 
 </form>
 
-<a href="index.html">Back to Index</a><br />
+<a href="index.php">Back to Index</a><br />
 
 </body>
 </html>

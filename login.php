@@ -121,7 +121,6 @@ if (isset($_POST['name']) || isset($_POST['pass']))
 else
 {
 	// no submission, so display the login form
-
 ?>
 	
 	<html>
@@ -154,7 +153,7 @@ else
 <body>
 
 <br />
-<a href="index.html">Back to Index</a><br />
+<a href="index.php">Back to Index</a><br />
 
 </body>
 </html>

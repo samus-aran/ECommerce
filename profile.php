@@ -4,7 +4,7 @@
 
 session_start();
 
-if (!$_SESSION['auth'] == 1)
+if (!isset($_SESSION['auth']) || !$_SESSION['auth'] == 1)
 {
 	// check authentication else die
 	
@@ -99,7 +99,7 @@ mysqli_close($connection);
 <body>
 
 <br />
-<a href="index.html">Back to Index</a><br />
+<a href="index.php">Back to Index</a><br />
 
 </body>
 </html>

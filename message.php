@@ -15,7 +15,7 @@ $inputCity = $_POST['msgCity'];
 $inputCountry = $_POST['msgCountry'];
 $inputPostcode = $_POST['msgPostcode'];
 $inputPhone = $_POST['msgPhone'];
-$inputDOB = $_POST['msgDOB'];
+$inputDOB = $_POST['msgYear'].'-'.$_POST['msgMonth'].'-'.$_POST['msgDay']; //$_POST['msgDOB'];
 $inputPass = hash('ripemd160', $_POST['msgPass']);
 
 $inputFullName = $inputFirst.' '.$inputLast;
@@ -77,7 +77,7 @@ mysqli_close($connection);
 ?>
 
 <br />
-<a href="index.html">Back to Index</a><br />
+<a href="index.php">Back to Index</a><br />
 
 </body>
 </html>
