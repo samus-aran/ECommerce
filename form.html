@@ -1,47 +1,62 @@
 <html>
-
-<head></head>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+    <link rel="stylesheet" href="style.css" />  
+    <title>Registration</title>
+</head>
 <body>
 
-Please enter your registration detail. Fields marked with a * are required.
+<div id="container"> 
+  
+    <div id="main"> 
 
-<form action="message.php" method="post">
+		Please enter your registration detail. Fields marked with a * are required.
 
-First Name*: <br><input type="text" name="msgFirst" required="required" size="30"><br />
-Last Name*: <br><input type="text" name="msgLast" required="required" size="30"><br />
-Email Address*: <br><input type="email" name="msgEmail" required="required" size="30"><br />
-Password*: <br><input type="password" name="msgPass" required="required" size="30"><br />
-Street Address 1*: <br><input type="text" name="msgAddress1" required="required" size="30"><br />
-Street Address 2: <br><input type="text" name="msgAddress2" size="30"><br />
-City/Town*: <br><input type="text" name="msgCity" required="required" size="30"><br />
-Country*: <br><input type="text" name="msgCountry" required="required" size="30"><br />
-Postcode*: <br><input type="text" name="msgPostcode" required="required" size="30"><br />
-Phone No.: <br><input type="text" name="msgPhone" size="30"><br />
-<fieldset>
-	<legend>Date of Birth (DD-MM-YYYY)*</legend>
-	Day: <input type="text" name="msgDay" required="required" size="5">
-	Month: <select name="msgMonth">
-		<option value="01">January</option>
-		<option value="02">February</option>
-		<option value="03">March</option>
-		<option value="04">April</option>
-		<option value="05">May</option>
-		<option value="06">June</option>
-		<option value="07">July</option>
-		<option value="08">August</option>
-		<option value="09">September</option>
-		<option value="10">October</option>
-		<option value="11">November</option>
-		<option value="12">December</option>
-	</select>
-	Year: <input type="text" name="msgYear" required="required" size="8">
-</fieldset>
+		<form action="message.php" method="post">
 
-<br><input type="submit" value="Complete Registration">
+		First Name*: <br><input type="text" name="msgFirst" required="required" size="30"><br />
+		Last Name*: <br><input type="text" name="msgLast" required="required" size="30"><br />
+		Email Address*: <br><input type="email" name="msgEmail" required="required" size="30"><br />
+		Password*: <br><input type="password" name="msgPass" required="required" size="30"><br />
+		Street Address 1*: <br><input type="text" name="msgAddress1" required="required" size="30"><br />
+		Street Address 2: <br><input type="text" name="msgAddress2" size="30"><br />
+		City/Town*: <br><input type="text" name="msgCity" required="required" size="30"><br />
+		Country*: <br><input type="text" name="msgCountry" required="required" size="30"><br />
+		Postcode*: <br><input type="text" name="msgPostcode" required="required" size="30"><br />
+		Phone No.: <br><input type="text" name="msgPhone" size="30"><br />
+		<fieldset>
+			<legend>Date of Birth (DD-MM-YYYY)*</legend>
+			Day: <input type="text" name="msgDay" required="required" size="5">
+			Month: <select name="msgMonth">
+				<option value="01">January</option>
+				<option value="02">February</option>
+				<option value="03">March</option>
+				<option value="04">April</option>
+				<option value="05">May</option>
+				<option value="06">June</option>
+				<option value="07">July</option>
+				<option value="08">August</option>
+				<option value="09">September</option>
+				<option value="10">October</option>
+				<option value="11">November</option>
+				<option value="12">December</option>
+			</select>
+			Year: <input type="text" name="msgYear" required="required" size="8">
+		</fieldset>
 
-</form>
+		<br><input type="submit" value="Complete Registration">
 
-<a href="index.php">Back to Index</a><br />
+		</form>
+
+		<a href="index.php">Back to Index</a><br />
+	
+	</div>
+	
+	<div id="sidebar"><!--end of main-->
+              
+    </div><!--end of sidebar--> 
+  
+</div><!--end container--> 
 
 </body>
 </html>

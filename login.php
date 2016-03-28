@@ -1,5 +1,7 @@
 <?php
 
+require("connection.php");
+
 if (isset($_POST['name']) || isset($_POST['pass']))
 {
 	// form submitted
@@ -16,24 +18,6 @@ if (isset($_POST['name']) || isset($_POST['pass']))
 		die ("ERROR: Please enter a password.");
 	}
 	
-	// set database server access variables:
-	
-	$host = "localhost";
-
-	$user = "root";
-
-	$pass = "";
-
-	$db = "ECommerce";
-	
-	// open connection
-	
-	$connection = mysqli_connect($host, $user, $pass) or die ("Unable to connect!");
-
-	// select database
-
-	mysqli_select_db($connection, $db) or die ("Unable to select database!");
-
 	// create query 
 	
 	$query = "SELECT * FROM customer WHERE CustomerEmail = '" . $_POST['name'] . "' AND CustomerPass = '" . hash('ripemd160', $_POST['pass']) . "'";
@@ -50,7 +34,7 @@ if (isset($_POST['name']) || isset($_POST['pass']))
 		
 		// so create a session and set cookie with username
 		
-		session_start();
+		//session_start();
 		
 		$_SESSION['auth'] = 1;
 		
@@ -73,7 +57,7 @@ if (isset($_POST['name']) || isset($_POST['pass']))
 			<body>
 			
 			<br />
-			<a href="profile.php">Go to your Profile Page.</a><br />
+			<a href="profilepage.php">Go to your Profile Page.</a><br />
 
 			</body>
 			</html>

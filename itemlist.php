@@ -4,25 +4,52 @@
 <body>
 
 <?php
+require("connection.php");
 
-// set database server access variables:
+// if action from selection has been set to add
 
-$host = "localhost";
+if(isset($_GET['action']) && $_GET['action']=="add")
+{
+	// set product id
+    $id=intval($_GET['id']); 
+	
+	$message2 = "Added ".$id." to Cart";
+    
+	// if product already exists just add one more to item
+    if(isset($_SESSION['cart'][$id]))
+	{          
+        $_SESSION['cart'][$id]['quantity']++; 
+    }
+	else
+	{ 
+		// set query and execute
+		
+        $queryCart="SELECT * FROM product 
+            WHERE idProduct = '$id'"; 
+        $resultCart=mysqli_query($connection, $queryCart); 
+        if(mysqli_num_rows($resultCart)!=0)
+		{ 
+            $rowCart=mysqli_fetch_array($resultCart); 
+                 
+            $_SESSION['cart'][$rowCart['idProduct']]=array( 
+                    "quantity" => 1, 
+                    "price" => $rowCart['ProductPrice'] 
+                ); 
+        }
+		else
+		{ 
+            $message="This product id is invalid!"; 
+        }  
+    } 
+} 
+	
+if(isset($message))
+{ 
+    echo "".$message2.""; 
+    echo "".$message.""; 
+} 
 
-$user = "root";
-
-$pass = "";
-
-$db = "ECommerce";
-
-// open connection
-
-$connection = mysqli_connect($host, $user, $pass) or die ("Unable to connect!");
-
-// select database
-
-mysqli_select_db($connection, $db) or die ("Unable to select database!");
-
+ 
 // create queries 
 
 $queryProduct = "SELECT * FROM product";
@@ -39,24 +66,25 @@ if (mysqli_num_rows($resultProduct) > 0)
 {
 	// yes, then print them
 	
+	echo "<h1>Products</h1>";
 	echo "<table cellpadding=15 border=2>";
+	echo "<tr>	<th>ID</th> 
+				<th>Name</th> 
+				<th>Price</th>	</tr>";
 	
 	while($row = mysqli_fetch_row($resultProduct)) 
 	{
 		echo "<tr>";
-		
 		echo "<td>".$row[0]."</td>";
-		
 		echo "<td>".$row[1]."</td>";
-		
+		echo "<td>£".$row[2]."</td>";
+		echo "<td><a href='shop.php?page=itemlist&action=add&id= $row[0]'>Add to cart</a></td>";
 		echo "</tr>";
 	}
 	
 	echo "</table>";
 }
-
 else
-	
 {
 	// no, print status
 	
@@ -73,8 +101,9 @@ mysqli_free_result($resultProduct);
 // set menus for user selection
 ?>
 
-<form action="addbasket.php" method="post">
+<form action="shop.php?page=itemlist&id=<?php $itemProduct ?>&action=add">
 <p>Select item</p>
+
 <select name="itemProduct">
 	<?php
 	// Query Product Table
@@ -89,7 +118,7 @@ mysqli_free_result($resultProduct);
 	}
 	?>
 </select>
-
+<!--
 <select name="itemSize">
 	<?php
 	// Query Size Table
@@ -119,7 +148,7 @@ mysqli_free_result($resultProduct);
 	}
 	?>
 </select>
-
+-->
 <br><input type="submit" value="Add to the Basket">
 </form>
 

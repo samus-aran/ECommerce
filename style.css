@@ -1,0 +1,53 @@
+body
+{
+	font-family: Calibri;
+	font-size: 14px;
+	color: #333;
+}
+
+#container
+{
+	width: 800px;
+	margin: 100px auto;
+	background-color: #FFE4C4;
+	overflow: hidden; 
+	padding: 20px;
+}
+
+#main
+{
+	width: 590px;
+	float: left;
+}
+
+#sidebar 
+{
+	width: 200px;
+	background-color: #DEB887;
+	float: left;
+	padding-left: 10px;
+}
+
+#main table
+{ 
+	width: 480px; 
+} 
+
+#main table th 
+{ 
+	padding: 10px; 
+	background-color: #DEB887; 
+	color: #fff; 
+	text-align: left; 
+} 
+              
+#main table td 
+{ 
+	font-family: Calibri;
+	padding: 5px; 
+} 
+              
+#main table tr 
+{ 
+	background-color: #FAEBD7; 
+} 

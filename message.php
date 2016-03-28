@@ -4,6 +4,8 @@
 
 <?php
 
+require("connection.php");
+
 // retrieve form data
 
 $inputFirst = $_POST['msgFirst'];
@@ -40,25 +42,8 @@ echo "Full Name : <i>$inputFullName</i><br />
 Email Address : <i>$inputEmail</i><br />
 Delivery Address : <i>$inputFullAddress, $inputCity, $inputCountry, $inputPostcode</i><br />
 Phone No. : <i>$inputPhone</i><br />
-Date of Birth : <i>$inputDOB</i><br />";
-
-// set database server access variables:
-
-$host = "localhost";
-
-$user = "root";
-
-$pass = "";
-
-$db = "ECommerce";
-
-// open connection
-
-$connection = mysqli_connect($host, $user, $pass) or die ("Unable to connect!");
-
-// select database
-
-mysqli_select_db($connection, $db) or die ("Unable to select database!");
+Date of Birth : <i>$inputDOB</i><br /><br />
+You have been registered!";
 
 // STUFF //
 

@@ -2,7 +2,8 @@
 
 // start session
 
-session_start();
+//session_start();
+require("connection.php");
 
 if (!isset($_SESSION['auth']) || !$_SESSION['auth'] == 1)
 {
@@ -28,24 +29,6 @@ else
 <?php
 
 // DISPLAY PROFILE INFO
-
-// set database server access variables:
-
-$host = "localhost";
-
-$user = "root";
-
-$pass = "";
-
-$db = "ECommerce";
-
-// open connection
-
-$connection = mysqli_connect($host, $user, $pass) or die ("Unable to connect!");
-
-// select database
-
-mysqli_select_db($connection, $db) or die ("Unable to select database!");
 
 // create query 
 
