@@ -101,6 +101,8 @@ mysqli_free_result($resultProduct);
 // set menus for user selection
 ?>
 
+<!--
+
 <form action="shop.php?page=itemlist&id=<?php $itemProduct ?>&action=add">
 <p>Select item</p>
 
@@ -118,7 +120,7 @@ mysqli_free_result($resultProduct);
 	}
 	?>
 </select>
-<!--
+
 <select name="itemSize">
 	<?php
 	// Query Size Table
@@ -148,9 +150,10 @@ mysqli_free_result($resultProduct);
 	}
 	?>
 </select>
--->
 <br><input type="submit" value="Add to the Basket">
 </form>
+
+-->
 
 <?php
 

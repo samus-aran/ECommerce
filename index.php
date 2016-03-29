@@ -6,7 +6,7 @@
     <title>Welcome!</title> 
 </head>
 <body>
- <div id="container"> 
+<div id="container"> 
   
         <div id="main"> 
 		
@@ -32,6 +32,8 @@
         </div><!--end of main--> 
           
         <div id="sidebar"> 
+		
+			<?php require("cart.php") ?>
               
         </div><!--end of sidebar--> 
   

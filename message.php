@@ -1,5 +1,9 @@
 <html>
-<head></head>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+    <link rel="stylesheet" href="style.css" />  
+    <title>Registration Complete</title>
+</head>
 <body>
 
 <?php
@@ -49,7 +53,9 @@ You have been registered!";
 
 // create the queries
 
-$query = "INSERT INTO Customer (CustomerFirstName, CustomerLastName, CustomerEmail, CustomerAddress1, CustomerAddress2, CustomerCity, CustomerCountry, CustomerPostcode, CustomerPhone, CustomerDOB, CustomerPass) VALUES ('$inputFirst','$inputLast','$inputEmail','$inputAddress1','$inputAddress2','$inputCity','$inputCountry','$inputPostcode','$inputPhone','$inputDOB','$inputPass')";
+$query = "INSERT INTO Customer 
+(CustomerFirstName, CustomerLastName, CustomerEmail, CustomerAddress1, CustomerAddress2, CustomerCity, CustomerCountry, CustomerPostcode, CustomerPhone, CustomerDOB, CustomerPass) 
+VALUES ('$inputFirst','$inputLast','$inputEmail','$inputAddress1','$inputAddress2','$inputCity','$inputCountry','$inputPostcode','$inputPhone','$inputDOB','$inputPass')";
 
 // execute queries and insert into database
 
